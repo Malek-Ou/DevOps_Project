@@ -1,22 +1,6 @@
-### Secrets & env
-.env
-.env.*
-*.override.yml
-
-### Spring / Maven / Gradle
-target/
-*.jar
-*.war
-*.log
-.mvn/
-gradle/
-build/
-
-### IntelliJ / VS Code
-.idea/
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
-.vscode/
-
-### OS
-.DS_Store
-Thumbs.db
+*.ipr
+.uploads
