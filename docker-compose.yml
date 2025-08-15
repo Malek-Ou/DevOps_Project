@@ -10,7 +10,7 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - spring-demo
     restart: unless-stopped
@@ -18,22 +18,28 @@ services:
     container_name: mail-dev-bsn
     image: maildev/maildev
     ports:
-      - 1080:1080
-      - 1025:1025
+      - "1080:1080"
+      - "1025:1025"
   bsn-api:
     container_name: bsn-api
-    image: malek/bsn:1.0.1
+    image: malek/bsn:1.0.2
+    # 👇 DÉBUT DES MODIFICATIONS
+    env_file:
+      - .env
+    # 👆 FIN DES MODIFICATIONS
     ports:
-      - 8088:8088
+      - "8088:8088"
     networks:
       - spring-demo
     depends_on:
+      # 👇 MODIFICATION : AJOUT DE MAIL-DEV
       - postgres
+      - mail-dev
   bsn-ui:
     container_name: bsn-ui
     image: malek/bsn-ui:1.0.0
     ports:
-      - 8080:80
+      - "8080:80"
     networks:
       - spring-demo
     depends_on:

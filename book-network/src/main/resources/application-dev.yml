@@ -13,34 +13,32 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
+  
+  # --- DÉBUT DE LA SECTION MISE À JOUR ---
   mail:
     host: smtp.gmail.com
     port: 465
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
-    protocol: smtp
+    protocol: smtps  # Important: utiliser 'smtps' pour SSL sur le port 465
     properties:
-      mail:
-        smtp:
-          auth: true
-          ssl:
-            enable: true
-            trust: "*"
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      # La propriété starttls.enable a été retirée car elle est pour le port 587, pas 465
+  # --- FIN DE LA SECTION MISE À JOUR ---
 
 application:
   security:
     jwt:
-      secret-key: a1b2fcf93c0508df14836f8f05796b0da8f8543544882571fac46c188969562d 
-      expiration: 10368000000          # 1 day
+      secret-key: f0d56d420cef8b186ab1aeb6062c09efa6ba90449409a8afdf0fa3b694a658cc
+      expiration: 10368000000  
       refresh-token:
-        expiration: 10368000000       # 7 days
+        expiration: 10368000000  
   mailing:
     frontend:
       activation-url: http://localhost:4200/activate-account
   file:
     uploads:
       photos-output-path: ./uploads
-
 server:
   port: 8088
