@@ -1,6 +1,22 @@
-### IntelliJ IDEA ###
-.idea
-*.iws
+### Secrets & env
+.env
+.env.*
+*.override.yml
+
+### Spring / Maven / Gradle
+target/
+*.jar
+*.war
+*.log
+.mvn/
+gradle/
+build/
+
+### IntelliJ / VS Code
+.idea/
 *.iml
-*.ipr
-.uploads
+.vscode/
+
+### OS
+.DS_Store
+Thumbs.db
