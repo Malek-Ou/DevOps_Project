@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 465
-    username: gmail_account@gmail.com
-    password: gmail_password
+    username: malekouaer@gmail.com
+    password: uhrh zwfu xnwo npib
     properties:
       mail:
         smtp:
@@ -31,7 +31,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      secret-key: f0d56d420cef8b186ab1aeb6062c09efa6ba90449409a8afdf0fa3b694a658cc
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
